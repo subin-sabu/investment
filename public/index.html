@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Quote Generator</title>
+    <link rel="icon" type="image/x-icon" href="/images/inr.avif">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, #dbeafe 0, #eff6ff 30%, #f8fafc 70%),
+                linear-gradient(to bottom, #ffffff, #f3f4f6);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-6">
+
+<div class="w-full max-w-xl">
+
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-800 to-blue-600 px-8 py-8 text-center">
+
+            <h1 class="text-4xl font-extrabold text-white">
+                Investment Quote Generator
+            </h1>
+
+            <p class="text-blue-100 mt-2">
+                Generate a basic investment illustration instantly.
+            </p>
+
+        </div>
+
+        <!-- Form -->
+        <form id="quoteForm" class="p-8 space-y-6">
+
+            <!-- Annual Premium -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Annual Premium (₹)
+                </label>
+
+                <input
+                    id="premium"
+                    type="number"
+                    required
+                    placeholder="100000"
+                    class="w-full rounded-xl border border-gray-300 px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-600 transition"
+                >
+
+                <!-- Hidden until user starts typing -->
+                <p
+                    id="premiumHint"
+                    class="hidden mt-2 text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2"
+                ></p>
+            </div>
+
+            <!-- PPT & Policy Term -->
+            <div class="grid grid-cols-2 gap-5">
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        PPT (Years)
+                    </label>
+
+                    <input
+                        id="ppt"
+                        type="number"
+                        min="1"
+                        max="40"
+                        required
+                        placeholder="10"
+                        class="w-full rounded-xl border border-gray-300 px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-600 transition"
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        Policy Term
+                    </label>
+
+                    <input
+                        id="pt"
+                        type="number"
+                        min="1"
+                        required
+                        placeholder="40"
+                        class="w-full rounded-xl border border-gray-300 px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-600 transition"
+                    >
+                </div>
+
+            </div>
+
+            <!-- CAGR -->
+            <div>
+
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Projected CAGR (%)
+                </label>
+
+                <input
+                    id="cagr"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    required
+                    placeholder="16.92"
+                    class="w-full rounded-xl border border-gray-300 px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-600 transition"
+                >
+
+            </div>
+
+            <!-- Download Button -->
+            <button
+                id="downloadBtn"
+                type="submit"
+                class="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg transition duration-300 hover:scale-[1.02] active:scale-100"
+            >
+                Download Quote
+            </button>
+
+        </form>
+
+    </div>
+
+    <p class="text-center text-gray-500 mt-6 text-sm">
+        HDFC Life Investment Illustration Generator
+    </p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
