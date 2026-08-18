@@ -60,7 +60,7 @@ function generateImage({ data, premium, ppt, pt, cagr, maturity }) {
 
   ctx.fillStyle = "#00843D";
   ctx.font = "bold 42px Roboto";
-  ctx.fillText("Invest with India's Top Insurer - HDFC Life", width / 2, 170);
+  ctx.fillText("Invest with India's Top Insurer", width / 2, 170);
 
   //-----------------------------------------
   // Withdrawal Highlight
@@ -165,7 +165,7 @@ function generateImage({ data, premium, ppt, pt, cagr, maturity }) {
   ctx.font = "bold 24px Roboto";
 
   const disclaimer = [
-    `*The projected fund growth of ${cagr}% is based on the historical performance of HDFC Life ULIP funds such as Discovery Fund, Flexi Cap Fund and similar equity-oriented funds.`,
+    `*The projected fund growth of ${cagr}% is based on the historical performance of ULIP funds such as Discovery Fund, Flexi Cap Fund and similar equity-oriented funds.`,
     "",
     "Investments are subject to market risks. Please read all scheme related documents carefully before investing. Past performance is not indicative of future returns.",
   ];
