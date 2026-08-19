@@ -41,15 +41,29 @@ app.post("/generate-quote", (req, res) => {
       ppt <= 0 ||
       pt <= 0 ||
       cagr <= 0 ||
+      cagr > 18 || // Maximum CAGR is 18%
       ppt > 40|| // Maximum PPT is 40 years
-      pt > 100 || // Maximum PT is 100 years
+      pt > 50 || // Maximum PT is 50 years
       ppt > pt
     ) {
       return res.status(400).json({
         message:
-          "Invalid input. PPT must be between 1 and 40 years and cannot exceed the Policy Term.",
+          "Unrealistic values provided. Please check your inputs.",
       });
     }
+
+    if (
+      pt <= 10 && 
+      cagr > 15 
+    ) {
+      return res.status(400).json({
+        message:
+          "Values provided are unrealistic. For a period of 10 years or less, the average CAGR should not exceed 15%.",
+      });
+    }
+
+
+
 
     const imageBuffer = calculateFundGrowth({
       premium,
